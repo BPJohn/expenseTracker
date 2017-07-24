@@ -1,1 +1,48 @@
-<div class="text-center md-padding">Car Log</div>
+<div class="text-center md-padding">Car Setup<br/>
+  <form name="CarForm">
+  <md-input-container>
+    <label>Make</label>
+    <input name="CarMake" ng-model="CarMake" required md-maxlength="30" minlength="4">
+    <div ng-messages="CarMake.CarMake.$error" ng-show="CarMake.CarMake.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Model</label>
+    <textarea name="CarModel" ng-model="CarModel" required md-maxlength="30"></textarea>
+    <div ng-messages="CarForm.CarModel.$error" ng-show="CarForm.CarModel.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Year</label>
+    <input type ="number" name="CarYear" ng-model="CarYear"  md-no-autogrow ="true" required md-maxlength="4" min = "2000" max = "2020"></input>
+    <div ng-messages="CarForm.CarYear.$error" ng-show="CarForm.CarYear.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">Enter Year Between 2000 to 2020</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <input type = "number" name = "StarMilage" ng-model = "StartMilage" placeholder="Starting Milage" required md-maxlength="7" min = "0" max = "1000000"></input>
+    <div ng-messages="CarForm.StarMilage.$error" ng-show="CarForm.StarMilage.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">Enter Beginig Milage</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+<label>In Service Date</label>
+    <div>
+      <input type ="date" ng-model = 'inServiceDate' md-min-date = "12/31/2016" md-max-date "12/31/2020"></input>
+      <!-- <md-calendar flex layout layout-fill ng-model="Date"></md-calendar> -->
+    <!-- <input mdInput[mdDatepicker]='serviceDate' placeholder="In Service Date"></input> -->
+<!-- <md-datepicker #serviceDate></md-datepicker> -->
+  </md-input-container>
+  </div>
+
+
+</form>
+
+</div>
