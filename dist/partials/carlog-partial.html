@@ -1,5 +1,6 @@
-<div class="text-center md-padding">Car Setup<br/>
-  <form name="CarForm">
+<div class="text-center md-padding" >Car Setup<br/>
+  <div>
+  <form name="CarForm" layout ="row">
   <md-input-container>
     <label>Make</label>
     <input name="CarMake" ng-model="CarMake" required md-maxlength="30" minlength="4">
@@ -40,9 +41,15 @@
     <!-- <input mdInput[mdDatepicker]='serviceDate' placeholder="In Service Date"></input> -->
 <!-- <md-datepicker #serviceDate></md-datepicker> -->
   </md-input-container>
+</div>
+  <md-input-container>
+    <div>
+    <md-button type = 'submit' class='md-accent md-raised'>Add new Car</md-button>
   </div>
+  </md-input-container>
 
 
 </form>
 
+</div>
 </div>
