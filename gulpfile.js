@@ -11,8 +11,10 @@ var imagemin = require('gulp-imagemin');
 var iife = require("gulp-iife");
 var cleanCSS = require('gulp-clean-css');
 var Server = require('karma').Server;
-
+var express = require('express');
+var mongoose = require('mongoose');
 gulp.task('default', ['serve']);
+
 
 gulp.task('init', ['sass', 'bower', 'js', 'uglify-js', 'image', 'image-min', 'html', 'index']);
 
@@ -26,7 +28,7 @@ gulp.task('serve', ['init'], function() {
     });
 
     /* If you use a proxy replace the previous code with the below script replacing 'yourlocal.dev' with your local proxy
-       
+
         browserSync.init({
             proxy: 'yourlocal.dev'
         });
@@ -150,7 +152,7 @@ gulp.task('serve:dist', ['dist:package'], function() {
     });
 
     /* If you use a proxy replace the previous code with the below script replacing 'yourlocal.dev' with your local proxy
-       
+
         browserSync.init({
             proxy: 'yourlocal.dev'
         });

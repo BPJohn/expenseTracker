@@ -42,6 +42,8 @@
     "karma-phantomjs-launcher": "1.x || ^0.2.0"
   },
   "dependencies": {
-    "angular-material-calendar": "^0.2.14"
+    "angular-material-calendar": "^0.2.14",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.4"
   }
 }

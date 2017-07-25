@@ -1,6 +1,7 @@
-<div class="text-center md-padding" >Car Setup<br/>
+<div ng-controller = "CarController" class="text-center md-padding" >{{message}}<br/>
   <div>
-  <form name="CarForm" layout ="row">
+  <form  ng-submit ="CarForm()" layout ="row">
+
   <md-input-container>
     <label>Make</label>
     <input name="CarMake" ng-model="CarMake" required md-maxlength="30" minlength="4">
@@ -20,17 +21,18 @@
   </md-input-container>
   <md-input-container>
     <label>Year</label>
-    <input type ="number" name="CarYear" ng-model="CarYear"  md-no-autogrow ="true" required md-maxlength="4" min = "2000" max = "2020"></input>
+    <input type ="number" name="CarYear" ng-model="CarYear"  md-no-autogrow ="true" required  min = "2000" max = "2020"></input>
     <div ng-messages="CarForm.CarYear.$error" ng-show="CarForm.CarYear.$dirty">
       <div ng-message="required">This is required!</div>
       <div ng-message="md-maxlength">Enter Year Between 2000 to 2020</div>
     </div>
   </md-input-container>
   <md-input-container>
-    <input type = "number" name = "StarMilage" ng-model = "StartMilage" placeholder="Starting Milage" required md-maxlength="7" min = "0" max = "1000000"></input>
+    <input type = "number" name = "StarMilage" ng-model = "StartMilage" placeholder="Starting Milage" required min = "2" max = "1000000"></input>
     <div ng-messages="CarForm.StarMilage.$error" ng-show="CarForm.StarMilage.$dirty">
       <div ng-message="required">This is required!</div>
-      <div ng-message="md-maxlength">Enter Beginig Milage</div>
+      <div ng-message="max">Too Large Please check Milage</div>
+      <div ng-message="min">Number can't be negitive></div>
     </div>
   </md-input-container>
   <md-input-container>
@@ -46,10 +48,25 @@
     <div>
     <md-button type = 'submit' class='md-accent md-raised'>Add new Car</md-button>
   </div>
-  </md-input-container>
-
-
+</md-input-container>
 </form>
-
 </div>
+<div layout = "row" class="text-center md-padding">
+  <table class="table" >
+    <thead>
+      <th>Make  </th>
+    <th>  Model  </th>
+    <th>  Year  </th>
+    <th>  Milage </th>
+    <th> Service Date</th>
+    </thead>
+    <td ng-repeat ='car in carSetup' >{{car.make}} {{car.model}}  {{car.year}} {{car.startmil}}  {{car.serviceDate|date}}</td>
+    <td></br></td>
+
+
+
+    <!-- <md-list-item> {{car.make}} {{car.model}}  {{car.year}} {{car.startmil}}  {{car.serviceDate|date}}</md-list-item> -->
+  </table>
+</div>
+
 </div>
